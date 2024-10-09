@@ -92,14 +92,14 @@ function saveTodo() {
 
 //läser in todo-listan genom att hämta element med taggen article
 //Lagrar todo-listan i variabeln todolist
-let todolist = document.getElementsByTagName("article");
+let todos = document.getElementsByTagName("article");
 
 //skapar en temporär array som kan fyllas på med todo-items
 let tempArr = [];
 
 //loopar igenom todo-listan och element med taggen article lagras i arrayen
-for(i=0; i<todoListEl.length; i++) {
-    tempArr.push(todolist[i].innerHTML);
+for(i=0; i<todos.length; i++) {
+    tempArr.push(todos[i].innerHTML);
 }
 
 console.log(tempArr);
