@@ -77,6 +77,14 @@ newTodoItem.appendChild(newTextNode);
 //lägger till i todo-listan 
     todoListEl.appendChild(newTodoItem); 
 
+
+    //Lägger till klickhanterare med en "anonym funktion" med ett elemnt (e). Det element som klickats på raderas från listan.
+    newTodoItem.addEventListener("click", function(e) {
+    e.target.remove();
+
+});
+
+
 //raderar input-fält
     newTodoEl.value = "";
     newTodoButtonEl.disabled = true;
