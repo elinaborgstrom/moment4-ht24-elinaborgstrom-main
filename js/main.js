@@ -102,6 +102,12 @@ for(i=0; i<todos.length; i++) {
     tempArr.push(todos[i].innerHTML);
 }
 
+//arrayen konverteras till en JSON-sträng
+let jsonString = JSON.stringify(tempArr);
+
+//lagras till web-storage
+localStorage.setItem("todos", jsonString);
+
 console.log(tempArr);
 
 } 
