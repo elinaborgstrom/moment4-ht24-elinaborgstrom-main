@@ -118,6 +118,11 @@ function loadTodo() {
 
     console.log("läser in todo-lista.."); 
 
+//läser in todo-lista och konverterar från JSON tillbaka till array
+    let todos = JSON.parse(localStorage.getItem("todos"));
+
+    //testar utskrift
+    console.log(todos);
 } 
 
 
