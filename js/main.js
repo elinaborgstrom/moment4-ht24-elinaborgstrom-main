@@ -18,28 +18,54 @@ window.onload = init;
 
 
 //Startfunktion 
+function init () { 
 
+    console.log("initierar.."); //console.log för att testköra att allt fungerar
 
+    //läser in todo-lista 
+    loadTodoList() 
 
+} 
 
 //Konrollera input 
+function checkInput() { 
+
+    console.log("kontrollerar input.."); 
+    
+} 
 
 
+//Lägg till i todo-list
+function newTodo() { 
 
+    console.log("lägger till todo.."); 
 
-//Lägg till till todo-list
+    //anropar lagring 
+    saveTodoList(); 
 
-
+}
 
 
 //Spara todo-list
+function saveTodoList() { 
 
+    console.log("lagrar todo-list.."); 
+
+} 
 
 
 
 //Läs in todo-list
+function loadTodoList() { 
 
+    console.log("läser in todo-lista.."); 
 
+} 
 
 
 //Rensa todo-list
+function clearButton () { 
+
+    console.log("rensa todo-listan.."); 
+
+} 
