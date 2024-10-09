@@ -7,6 +7,7 @@ let newTodoButtonEl = document.getElementById("newtodobutton");
 let messgeEl = document.getElementById("message"); 
 let todoListEl = document.getElementById("todolist"); 
 let clearButtonEl = document.getElementById("clearbutton"); 
+let i;
 
 
 //Händelsehanterare 
@@ -26,7 +27,7 @@ function init () {
       newTodoButtonEl.disabled = true; 
 
     //läser in todo-lista 
-    loadTodoList() 
+    loadTodo() 
 
 } 
 
@@ -51,7 +52,7 @@ if (input.length > 4 ) {
 } else { 
 
     //meddelande med text vid för få tecken 
-    messgeEl.innerHTML = "Måste innehålla minst fem tecken."; 
+    messgeEl.innerHTML = "Använd minst fem tecken."; 
 
     newTodoButtonEl.disabled = true; 
 
@@ -67,7 +68,7 @@ function newTodo() {
 
     let input = newTodoEl.value; 
 
-//skapar nytt element 
+//skapar nytt article-element som placeras inom sektionen med id=todolist
 let newTodoItem = document.createElement("article"); 
 let newTextNode = document.createTextNode(input); 
 newTodoItem.appendChild(newTextNode);
@@ -78,24 +79,35 @@ newTodoItem.appendChild(newTextNode);
 
 //raderar input-fält
     newTodoEl.value = "";
+    newTodoButtonEl.disabled = true;
 
     //anropar lagring 
-    saveTodoList(); 
+    saveTodo(); 
 
 }
 
 
 //Spara todo-list
-function saveTodoList() { 
+function saveTodo() { 
 
-    console.log("lagrar todo-list.."); 
+//läser in todo-listan genom att hämta element med taggen article
+let articles = document.getElementsByTagName("article");
+
+//skapar en temporär array som kan fyllas på med todo-items
+let tempArr = [];
+
+//loopar igenom todo-listan och element med taggen article lagras i arrayen
+for(i=0; i<articles.length; i++) {
+    tempArr.push(articles[i].innerHTML);
+}
+
+console.log(tempArr);
 
 } 
 
 
-
 //Läs in todo-list
-function loadTodoList() { 
+function loadTodo() { 
 
     console.log("läser in todo-lista.."); 
 
