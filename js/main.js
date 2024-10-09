@@ -25,8 +25,6 @@ function init () {
       //inaktivera lägg till-knapp 
       newTodoButtonEl.disabled = true; 
 
- 
-
     //läser in todo-lista 
     loadTodoList() 
 
@@ -66,6 +64,20 @@ if (input.length > 4 ) {
 function newTodo() { 
 
     console.log("lägger till todo.."); 
+
+    let input = newTodoEl.value; 
+
+//skapar nytt element 
+let newTodoItem = document.createElement("article"); 
+let newTextNode = document.createTextNode(input); 
+newTodoItem.appendChild(newTextNode);
+
+
+//lägger till i todo-listan 
+    todoListEl.appendChild(newTodoItem); 
+
+//raderar input-fält
+    newTodoEl.value = "";
 
     //anropar lagring 
     saveTodoList(); 
