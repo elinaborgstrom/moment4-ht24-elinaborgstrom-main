@@ -121,6 +121,19 @@ function loadTodo() {
 //läser in todo-lista och konverterar från JSON tillbaka till array
     let todos = JSON.parse(localStorage.getItem("todos"));
 
+//Loopar genom arayen
+for (i = 0; i < todos.length; i++) {
+    
+    
+
+//skapar fler element till todo-listan
+let newTodoItem = document.createElement("article"); 
+let newTextNode = document.createTextNode(todos[i]); 
+newTodoItem.appendChild(newTextNode);
+
+//lägger till i todo-listan 
+    todoListEl.appendChild(newTodoItem); 
+}
     //testar utskrift
     console.log(todos);
 } 
