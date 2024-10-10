@@ -21,8 +21,6 @@ window.onload = init;
 //Startfunktion 
 function init () { 
 
-    console.log("initierar.."); //console.log för att testköra att allt fungerar
-
       //inaktivera lägg till-knapp 
       newTodoButtonEl.disabled = true; 
 
@@ -34,7 +32,6 @@ function init () {
 //Konrollera input 
 function checkInput() { 
 
-    console.log("kontrollerar input.."); 
 
     let input = newTodoEl.value; 
 
@@ -64,7 +61,6 @@ if (input.length > 4 ) {
 //Lägg till i todo-list
 function newTodo() { 
 
-    console.log("lägger till todo.."); 
 
     let input = newTodoEl.value; 
 
@@ -116,7 +112,6 @@ let jsonString = JSON.stringify(tempArr);
 //lagras till web-storage
 localStorage.setItem("todos", jsonString);
 
-console.log(tempArr);
 
 } 
 
@@ -124,7 +119,7 @@ console.log(tempArr);
 //Läs in todo-list
 function loadTodo() { 
 
-    console.log("läser in todo-lista.."); 
+    
 
 //läser in todo-lista och konverterar från JSON tillbaka till array
     let todos = JSON.parse(localStorage.getItem("todos"));
@@ -151,8 +146,7 @@ saveTodo();
 
 });
 }
-    //testar utskrift
-    console.log(todos);
+ 
 } 
 
 
@@ -163,5 +157,4 @@ function clearButton () {
         //anropa utskrift
         saveTodo();
 
-        console.log("rensa todo-listan.."); 
 } 
