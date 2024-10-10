@@ -157,8 +157,11 @@ saveTodo();
 
 
 //Rensa todo-list
-function clearButton () { 
+function clearButton () {
+    localStorage.clear();
+    todoListEl.innerHTML = ""; 
+        //anropa utskrift
+        saveTodo();
 
-    console.log("rensa todo-listan.."); 
-
+        console.log("rensa todo-listan.."); 
 } 
